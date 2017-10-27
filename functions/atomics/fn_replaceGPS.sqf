@@ -8,7 +8,7 @@ private _oldGps = assignedItems _unit select {
     or
     (_x isKindOf ["UavTerminal_base", configFile >> "CfgWeapons"])
 };
-if count (count _oldGps > 0) then {
+if (count _oldGps > 0) then {
     _unit unlinkItem (_oldGps select 0);
 };
 if (_gps != "") then {
