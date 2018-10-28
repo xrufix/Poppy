@@ -6,6 +6,7 @@ private _config     = configNull;
 if (_loadConfig) then {
     _config = missionConfigFile >> "CfgLoadouts" >> _loadout;
     [_unit, _loadout] call compile (getText (_config >> "preLoadout"));
+    [QGVAR(preLoadout), [_unit, _loadout]] call CBA_fnc_localEvent;
 };
 
 private _uniqueRadio = [_unit] call FUNC(getUniqueRadio);
@@ -42,4 +43,5 @@ _unit selectWeapon (primaryWeapon _unit);
 
 if (_loadConfig) then {
     [_unit, _loadout] call compile (getText (_config >> "postLoadout"));
+    [QGVAR(postLoadout), [_unit, _loadout]] call CBA_fnc_localEvent;
 };
