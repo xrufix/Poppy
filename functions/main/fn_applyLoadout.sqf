@@ -9,7 +9,7 @@ if (_loadConfig) then {
     [QGVAR(preLoadout), [_unit, _loadout]] call CBA_fnc_localEvent;
 };
 
-private _uniqueRadio = [_unit] call FUNC(getUniqueRadio);
+private _uniqueRadio = [_unit, _config] call FUNC(getUniqueRadio);
 
 GVAR(overflowItems) = [];
 if (_loadConfig) then {

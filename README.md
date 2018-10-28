@@ -144,6 +144,7 @@ class CfgLoadouts {
         launcher[] = {...};
         insignia[] = {...};
         lrRadios[] = {...};
+        srRadio = "";
         preLoadout = "";
         postLoadout = "";
     };
@@ -176,6 +177,8 @@ There are a few special entries:
 - **lrRadios[]**
   This does also not support randomness. All radios within this array will be
   given to the unit.
+- **srRadio**
+  Only supports one radio given as string. If set to `""`, no radio will be given to the unit. Defaults to `"ItemRadio"` when using TFAR or `"ACRE_PRC343"` when using ACRE.
 - **preLoadout**
   Can contain code that will be compiled and called with the current unit and
   the loadout class before applying the loadout.
