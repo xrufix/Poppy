@@ -125,7 +125,7 @@ basic automatically generated loadouts from above and learn from them.
 The loadout config has the following base structure:
 ```
 class CfgLoadouts {
-    class Common<Blufor|Opfor|Independant|Civilian> {
+    class Common<Blufor|Opfor|Independent|Civilian> {
         uniform[] = {...};
         vest[] = {...};
         backpack[] = {...};
@@ -147,7 +147,7 @@ class CfgLoadouts {
         preLoadout = "";
         postLoadout = "";
     };
-    class <unit class name|unit variable name>: Common<Blufor|Opfor|Independant|Civilian> {
+    class <unit class name|unit variable name>: Common<Blufor|Opfor|Independent|Civilian> {
         ...
     };
 };
@@ -158,28 +158,28 @@ randomness - almost all config entries support randomness. This means if you
 you have multiple entries, Poppy will select one of them randomly.
 
 There are a few special entries:
-- **primary[]**  
-  Primary takes a special format to support attachments:  
-  `{"weapon", "attachment", "attachment", "attachment"}`  
+- **primary[]**
+  Primary takes a special format to support attachments:
+  `{"weapon", "attachment", "attachment", "attachment"}`
   Multiple of these subarrays are supported. You only need to fill this
   array with the attachment slots you use.
-- **secondary[]**  
+- **secondary[]**
   Same as *primary*.
-- **launcher[]**  
+- **launcher[]**
   Same as *primary*.
-- **magazines[]**  
+- **magazines[]**
   Magazines does not support randomness for obvious reasons. Additionally, you
-  can simplify your loadouts by using  
+  can simplify your loadouts by using
   `..., <magazine class name>, <amount of magazines>,...`.
-- **items[]**  
+- **items[]**
   Same as *magazines*.
-- **lrRadios[]**  
+- **lrRadios[]**
   This does also not support randomness. All radios within this array will be
   given to the unit.
-- **preLoadout**  
+- **preLoadout**
   Can contain code that will be compiled and called with the current unit and
   the loadout class before applying the loadout.
-- **postLoadout**  
+- **postLoadout**
   Same as *preLoadout*, but called after applying the loadout.
 
 ### Changing Poppy's settings
@@ -187,23 +187,23 @@ Poppy has a few settings that allow you little bit more customization. You can
 find them in the `CfgPoppy.hpp` file. You can easily change them by editing
 that file. Note that due to how configs work you will have to `0` to disable a
 setting and `1` to enable a setting.
-- **forceShowInfos**  
+- **forceShowInfos**
   Show info messages in multiplayer.
-- **forceShowWarnings**  
+- **forceShowWarnings**
   Show warning messages in multiplayer.
-- **forceShowErrors**  
+- **forceShowErrors**
   Show error messages in multiplayer.
-- **showLoadoutInBriefing**  
+- **showLoadoutInBriefing**
   Show the loadout of the player on the briefing screen.
-- **enableAILoadoutsSP**  
+- **enableAILoadoutsSP**
   Enables loadouts for playable AI units in singleplayer.
 
 If you're using ACRE, there's a few more settings you can change:
-- **distributeGroupLeaderRadios**  
+- **distributeGroupLeaderRadios**
   Enabling this will automatically give each group leader a long range radio.
-- **groupLeaderRadio**  
+- **groupLeaderRadio**
   This radio will be given to all group leaders if you enabled the setting
   above.
-- **channelNames[]**  
+- **channelNames[]**
   These are the channel names that will be assigned to the long range radio
   channels, in the given order. These channel names apply to all radio types.
