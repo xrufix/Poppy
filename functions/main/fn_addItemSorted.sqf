@@ -1,11 +1,11 @@
 #include "..\script_component.hpp"
-params ["_unit", "_item", "_sorting"];
+params ["_unit", "_item"];
 
 if !(_unit canAdd _item) exitWith {
     GVAR(overflowItems) pushBack _item;
 };
 
-private _containers = _sorting apply {_unit call _x};
+private _containers = [UNIFORM, VEST, BACKPACK] apply {_unit call _x};
 
 {
     if (_x canAdd _item) exitWith {

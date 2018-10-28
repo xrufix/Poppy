@@ -19,7 +19,7 @@ for "_i" from 0 to (_arrayCount - 1) do {
 
         if (_itemCount > 0) then {
             for "_j" from 1 to _itemCount do {
-                [_unit, _currentItem, [VEST, BACKPACK, UNIFORM]] call FUNC(addItemSorted);
+                [_unit, _currentItem] call FUNC(addItemSorted);
             };
         };
 
@@ -29,7 +29,7 @@ for "_i" from 0 to (_arrayCount - 1) do {
         if (_loadableWeapon != "") then {
             _unit addWeaponItem [_loadableWeapon, _currentItem];
         } else {
-            [_unit, _currentItem, [VEST, BACKPACK, UNIFORM]] call FUNC(addItemSorted);
+            [_unit, _currentItem] call FUNC(addItemSorted);
         };
     };
 };
